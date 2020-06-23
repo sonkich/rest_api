@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGO_ATLAS_PW": "rest-api-pws",
+    "MONGO_DB_NAME": "rest-api-news"
+  }
+}
