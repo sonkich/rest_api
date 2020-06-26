@@ -4,8 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const productRoutes = require('./api/routes/products');
-const orderRoutes = require('./api/routes/orders');
+const postsRoutes = require('./api/routes/posts');
 const mongoDbUrl = `mongodb+srv://admin:${process.env.MONGO_ATLAS_PW}@rest-api-news-owvim.mongodb.net/${process.env.MONGO_DB_NAME}?retryWrites=true&w=majority`;
 
 mongoose.connect(mongoDbUrl, {
@@ -32,8 +31,7 @@ app.use((req, res, next) => {
    next();
 });
 
-app.use('/products', productRoutes);
-app.use('/orders', orderRoutes);
+app.use('/posts', postsRoutes);
 
 app.use((req, res, next) => {
    const error = new Error('Not found');
